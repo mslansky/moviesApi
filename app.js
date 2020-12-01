@@ -1,11 +1,13 @@
 'use strict';
 require('dotenv').config();
-const store = require('./store.json');
+
 const express = require('express');
+const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
+
+const store = require('./store.json');
 const app = express();
-const morgan = require('morgan');
 
 console.log(process.env.API_TOKEN);
 console.log(process.env.name);
@@ -48,10 +50,11 @@ app.get('/movie', function handleGetMovie(req, res) {
   res.json(response);
 });
 
+const PORT = 8000;
 
 
-app.listen(8000, () => {
-  console.log('Express server is listening on port 8000!');
+app.listen(PORT, () => {
+  console.log(`Server is listening on http://localhost:${PORT}`);
 });
 
 
