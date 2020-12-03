@@ -9,8 +9,6 @@ const helmet = require('helmet');
 const store = require('./store.json');
 const app = express();
 
-console.log(process.env.API_TOKEN);
-console.log(process.env.name);
 
 app.use(morgan('dev'));
 app.use(cors());
